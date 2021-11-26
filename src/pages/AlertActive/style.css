@@ -1,0 +1,43 @@
+:root {
+    --alert1: #fcf003;
+    --alert2: #ff4f21;
+}
+
+.imagem {
+    height: 150px;
+    width: 150px;
+}
+
+#animacao {
+    animation-timing-function: ease;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: radial-gradient(var(--alert1) 1%, var(--alert2) 10%);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    animation-name: animacao;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    border: var(--alert2) solid 4px;
+    margin-right: 18px;
+    margin-bottom: 18px;
+}
+
+@keyframes animacao {
+    0%   {background-image: radial-gradient(var(--alert1) 1%, var(--alert2) 10%);}
+    10%  {background-image: radial-gradient(var(--alert1) 10%, var(--alert2) 20%);}
+    20%  {background-image: radial-gradient(var(--alert1) 20%, var(--alert2) 30%);}
+    30%  {background-image: radial-gradient(var(--alert1) 30%, var(--alert2) 40%);}
+    40%  {background-image: radial-gradient(var(--alert1) 40%, var(--alert2) 50%);}
+    50%  {background-image: radial-gradient(var(--alert1) 50%, var(--alert2) 60%);}
+    60%  {background-image: radial-gradient(var(--alert1) 60%, var(--alert2) 70%);}
+    70%  {background-image: radial-gradient(var(--alert1) 70%, var(--alert2) 80%);}
+    80%  {background-image: radial-gradient(var(--alert1) 80%, var(--alert2) 90%);}
+    90%  {background-image: radial-gradient(var(--alert1) 900%, var(--alert2 100%));}
+    100% {background-image: radial-gradient(var(--alert1) 100%, var(--alert2));}
+  }
