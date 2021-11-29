@@ -8,6 +8,7 @@ import { Stop } from '@mui/icons-material';
 import Error from '@mui/icons-material/Error';
 import ErrorOutline from '@mui/icons-material/ErrorOutline';
 import CircularProgress from '@mui/material/CircularProgress';
+import Timer from './Timer';
 
 const DesButton = styled(Button)`
   background-color: #ff4f21;
@@ -30,6 +31,14 @@ const StyledRating = styled(Rating)({
   },
 });
 
+const Container = styled(Box)({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 480,
+  height: 220,
+});
+
 export default function AlertActive({ emitido, setEmitido }) {
 
   const handleAlertEmissionCancel = async () => {
@@ -49,7 +58,7 @@ export default function AlertActive({ emitido, setEmitido }) {
 
     <Box>
       {emitido.isLoading ?
-        <CircularProgress />
+       <Container><CircularProgress /></Container> 
         :
         <>
           <Stack direction="row">
@@ -71,7 +80,7 @@ export default function AlertActive({ emitido, setEmitido }) {
                 />
               </Stack>
               <Typography>Usuários notificados: {emitido.hittedUsers}</Typography>
-              <Typography>Ativo - 00:00:00</Typography>
+              <Timer emitido={emitido} />              
               <DesButton onClick={handleAlertEmissionCancel} startIcon={<Stop />}>PARAR ALERTA</DesButton>
             </Stack>
           </Stack>
